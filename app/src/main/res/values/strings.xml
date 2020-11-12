@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CaculatorV5a</string>
+    <string name="menu_history">History</string>
+    <string name="menu_clear">Clear</string>
+    <string name="clear">Clear</string>
+    <string name="history">History</string>
+
+</resources>
