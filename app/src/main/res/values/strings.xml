@@ -4,5 +4,6 @@
     <string name="menu_clear">Clear</string>
     <string name="clear">Clear</string>
     <string name="history">History</string>
+    <string name="there_is_no_history_item_to_be_displayed">There is no history item to be displayed</string>
 
 </resources>

@@ -114,7 +114,8 @@ public class MainActivity extends AppCompatActivity    implements View.OnClickLi
                Log.d("Menu","History Menu call");
                //create the funtion that display the memory
                 Intent intent  = new Intent(MainActivity.this, History.class);
-                //intent.putStringArrayListExtra()
+                intent.putStringArrayListExtra(HISTORY_EXTRA, history);
+                startActivity(intent);
                 return true;
             case R.id.men_clear:
                 Log.d("Menu","clear Menu call");
