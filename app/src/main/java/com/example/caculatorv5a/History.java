@@ -26,7 +26,7 @@ public class History extends AppCompatActivity {
         noContent.setVisibility(list == null || list.isEmpty()? View.VISIBLE: View.INVISIBLE);
 
 
-        ListView listView = findViewById(R.id.label);
+        ListView listView = findViewById(R.id.listView);
         listView.setVisibility(list == null || list.isEmpty()? View.INVISIBLE: View.VISIBLE);
 
 
