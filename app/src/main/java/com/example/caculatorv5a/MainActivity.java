@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity    implements View.OnClickLi
     double answer;
     String currentText, sign,   strAnswer, value1, value2;
     ArrayList<String> history = new ArrayList<>();  //    Store results
-    private Button btnAC, btnEq,btnMin, btnAdd, btnMult, btnDiv;
+    private Button  btnEq,btnMin, btnAdd, btnMult, btnDiv, btnSign, btnSroot, btnSNroot, bntSqn, btnSq2, btnln, btnLog,btnNSroot;
     //creating an array of buttons
     String btnText;
 
@@ -35,9 +35,24 @@ public class MainActivity extends AppCompatActivity    implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout._land);
+
+
+        //handle screen orientation
+        if(findViewById(R.id.default_layout) != null)
+        {
+            setContentView(R.layout.activity_main);
+
+        }
+        if (findViewById(R.id.land_layout) != null)
+        {
+            setContentView(R.layout.);
+        }
+
+
         inputDiplay = findViewById(R.id.userInput);
         inputDiplay.setText("");
+
+
 
 
         //automatically create button for the digit
@@ -74,22 +89,38 @@ public class MainActivity extends AppCompatActivity    implements View.OnClickLi
 
 
             // AC button
-            btnAC = findViewById(R.id.btnAC );
+            //btnAC = findViewById(R.id.btnAC );
             btnAdd =    findViewById(R.id.btnAdd );
             btnDiv = (Button) findViewById(R.id.btnDiv );
             btnMin  = (Button) findViewById(R.id.btnSub );
             btnMult  = (Button) findViewById(R.id.btnMult );
             btnEq = (Button) findViewById(R.id.btnEq );
+            // btnSign, btnSroot, btnNSroot, bntSqn, btnSq2, btnln, btnLog;
+            btnSign = findViewById(R.id.btnSign);
+            btnSroot = findViewById(R.id.btnSroot) ;
+            btnSNroot = findViewById(R.id.btnNSroot);
+            bntSqn = findViewById(R.id.btnSqn);
+            btnSq2 = findViewById(R.id.btnSq2);
+            btnln =   findViewById(R.id.btnln);
+            btnLog = findViewById(R.id.btnLog);
+           // btnNSroot =
 
             //
 
-            btnAC.setOnClickListener(this);
+           // btnAC.setOnClickListener(this);
             btnAdd.setOnClickListener(this);
             btnDiv.setOnClickListener(this);
             btnMin.setOnClickListener(this);
             btnMult.setOnClickListener(this);
             btnEq.setOnClickListener(this);
-
+            btnSign.setOnClickListener(this);
+            //btnSroot.setOnClickListener(this);
+            //btnNSroot.setOnClickListener(this);
+            bntSqn.setOnClickListener(this);
+            btnSq2.setOnClickListener(this);
+            btnln.setOnClickListener(this);
+            btnLog.setOnClickListener(this);
+            btnNSroot.setOnClickListener(this);
 
 
         }
@@ -202,6 +233,25 @@ public class MainActivity extends AppCompatActivity    implements View.OnClickLi
                 inputDiplay.setText("");
 
                 break;
+            case "ln":
+                //code
+                break;
+            case "Log":
+                //code
+                break;
+            case "√":
+                //code
+                break;
+            case "n√":
+                //code
+                break;
+            case "xⁿ":
+                //code
+                break;
+            case "x^2":
+                //code
+                break;
+            
             case "=":
             {
                 if(sign == null)
@@ -257,6 +307,25 @@ public class MainActivity extends AppCompatActivity    implements View.OnClickLi
                             answer = calculator(strAnswer);
                             inputDiplay.setText( removeTrailingZero(String.valueOf(answer)));
                             break;
+                        case "√" :
+                            answer = Math.sqrt(Double.parseDouble(value1));
+                            
+
+                            break;
+                        case "n√" :
+                            //code
+                            break;
+                        case "ln" :
+                            //code
+                            break;
+                        case "lo" :
+                            //code
+                            break;
+                        case ".":
+
+                            //some more code
+                            break;
+
 
                         default:
                             inputDiplay.setText("Wrong sign");
