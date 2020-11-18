@@ -38,71 +38,72 @@ public class MainActivity extends AppCompatActivity    implements View.OnClickLi
 
 
         //handle screen orientation
-        if(findViewById(R.id.default_layout) != null)
-        {
-            setContentView(R.layout.activity_main);
+       if(findViewById(R.id.default_layout) != null)
+       {
+           setContentView(R.layout.activity_main);
+           inputDiplay = findViewById(R.id.userInput);
+           inputDiplay.setText("");
+           for (int i = 0; i <=9; i++)
+           {
+               String digitValue = "btn"+i ;
+               int resID = getResources().getIdentifier(digitValue,"id", getPackageName()) ;
 
-        }
+               final Button button = findViewById(resID);   //pass the int value of the UI element passes
+
+               button.setOnClickListener(new View.OnClickListener()
+               {
+                   @Override
+                   public void onClick(View view)
+                   {
+                       currentText =  inputDiplay.getText().toString();
+                       btnText = button.getText().toString();
+
+                       //double results = calculator(btnText);
+
+                       // stringResult = String.valueOf(results) ;
+                       currentText += btnText;
+
+                       //double results = calculator(stringResult);
+                       removeTrailingZero(currentText);
+                       inputDiplay.setText(currentText);
+                       // inputView.setText(stringResult + btnText);
+                       // currentText = "";
+
+                   }
+
+
+               });
+
+
+           }
         if (findViewById(R.id.land_layout) != null)
         {
-            setContentView(R.layout.);
+            setContentView(R.layout.activity_main_land);
         }
 
 
-        inputDiplay = findViewById(R.id.userInput);
-        inputDiplay.setText("");
 
 
 
 
         //automatically create button for the digit
-        for (int i = 0; i <=9; i++)
-        {
-            String digitValue = "btn"+i ;
-            int resID = getResources().getIdentifier(digitValue,"id", getPackageName()) ;
-
-            final Button button = findViewById(resID);   //pass the int value of the UI element passes
-
-            button.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    currentText =  inputDiplay.getText().toString();
-                    btnText = button.getText().toString();
-
-                    //double results = calculator(btnText);
-
-                    // stringResult = String.valueOf(results) ;
-                    currentText += btnText;
-
-                    //double results = calculator(stringResult);
-                    removeTrailingZero(currentText);
-                    inputDiplay.setText(currentText);
-                   // inputView.setText(stringResult + btnText);
-                   // currentText = "";
-
-                }
-
-
-            });
 
 
             // AC button
             //btnAC = findViewById(R.id.btnAC );
-            btnAdd =    findViewById(R.id.btnAdd );
+            btnAdd = (Button)   findViewById(R.id.btnAdd );
             btnDiv = (Button) findViewById(R.id.btnDiv );
             btnMin  = (Button) findViewById(R.id.btnSub );
             btnMult  = (Button) findViewById(R.id.btnMult );
             btnEq = (Button) findViewById(R.id.btnEq );
             // btnSign, btnSroot, btnNSroot, bntSqn, btnSq2, btnln, btnLog;
-            btnSign = findViewById(R.id.btnSign);
-            btnSroot = findViewById(R.id.btnSroot) ;
-            btnSNroot = findViewById(R.id.btnNSroot);
-            bntSqn = findViewById(R.id.btnSqn);
-            btnSq2 = findViewById(R.id.btnSq2);
-            btnln =   findViewById(R.id.btnln);
-            btnLog = findViewById(R.id.btnLog);
+            btnSign = (Button) findViewById(R.id.btnSign);
+            btnSroot =(Button)  findViewById(R.id.btnSroot) ;
+            btnSNroot =(Button)  findViewById(R.id.btnNSroot);
+            bntSqn = (Button) findViewById(R.id.btnSqn);
+            btnSq2 =(Button)  findViewById(R.id.btnSq2);
+            btnln = (Button)   findViewById(R.id.btnln);
+            btnLog = (Button) findViewById(R.id.btnLog);
            // btnNSroot =
 
             //
@@ -116,11 +117,11 @@ public class MainActivity extends AppCompatActivity    implements View.OnClickLi
             btnSign.setOnClickListener(this);
             //btnSroot.setOnClickListener(this);
             //btnNSroot.setOnClickListener(this);
-            bntSqn.setOnClickListener(this);
-            btnSq2.setOnClickListener(this);
-            btnln.setOnClickListener(this);
-            btnLog.setOnClickListener(this);
-            btnNSroot.setOnClickListener(this);
+            //bntSqn.setOnClickListener(this);
+           // btnSq2.setOnClickListener(this);
+          //  btnln.setOnClickListener(this);
+           // btnLog.setOnClickListener(this);
+           // btnNSroot.setOnClickListener(this);
 
 
         }
